@@ -6,19 +6,18 @@ public class XMLParser {
     List<ApartmentLocation> listOfApartmentsLocations = new ArrayList<>();
     private static final int NUMBER_OF_PROPERTIES = 4;
     private static final char QUOTE = '\"';
+    private static final String LAST_LINE = "</root>";
 
     public void parse(String filename) {
         try (
               FileReader fileReader = new FileReader(new File(filename));
               BufferedReader reader = new BufferedReader(fileReader);
-              )
-            {
-            String firstLine = reader.readLine();
+              ) {
+            String lineWithEncoding = reader.readLine();
             String lineWithRoot = reader.readLine();
-
             String line = reader.readLine();
 
-            while (!line.equals("</root>")) {
+            while (!line.equals(LAST_LINE)) {
                 char[] symbols = line.toCharArray();
                 boolean isInQuotes = false;
                 int indexOfProperty = 0;

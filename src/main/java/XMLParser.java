@@ -8,11 +8,11 @@ public class XMLParser {
     private static final char QUOTE = '\"';
 
     public void parse(String filename) {
-        try {
-            File file = new File(filename);
-            FileReader fileReader = new FileReader(file);
-            BufferedReader reader = new BufferedReader(fileReader);
-
+        try (
+              FileReader fileReader = new FileReader(new File(filename));
+              BufferedReader reader = new BufferedReader(fileReader);
+              )
+            {
             String firstLine = reader.readLine();
             String lineWithRoot = reader.readLine();
 

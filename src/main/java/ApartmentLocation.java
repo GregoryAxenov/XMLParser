@@ -42,4 +42,14 @@ public class ApartmentLocation {
     public void setFloor(int floor) {
         this.floor = floor;
     }
+
+    @Override
+    public String toString() {
+        return "ApartmentLocation{" +
+                "city='" + city + '\'' +
+                ", street='" + street + '\'' +
+                ", house=" + house +
+                ", floor=" + floor +
+                '}';
+    }
 }

@@ -43,7 +43,7 @@ public class ApartmentLocationHandler {
 
         for (Map.Entry<String, List<Integer>> cityWithFloors: citiesWithFloors.entrySet()) {
             System.out.print(cityWithFloors.getKey() + " - ");
-            for (int i = 1; i < MAX_FLOOR; i++) {
+            for (int i = 1; i <= MAX_FLOOR; i++) {
                 System.out.print(i + " floor - " + cityWithFloors.getValue().get(i) + " ");
             }
             System.out.println();

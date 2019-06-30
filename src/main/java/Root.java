@@ -6,6 +6,6 @@ import java.util.List;
 @XmlRootElement
 public class Root {
     @XmlElement(name = "item")
-    public List<ApartmentLocation> apartmentLocations = new ArrayList<>();
+    public static List<ApartmentLocation> apartmentLocations = new ArrayList<>();
 
 }

@@ -1,5 +1,6 @@
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
+import java.util.Objects;
 
 @XmlType(propOrder={"city", "street" , "house", "floor"})
 public class ApartmentLocation {
@@ -61,5 +62,21 @@ public class ApartmentLocation {
                 " street=" + street +
                 " house=" + house +
                 " floor=" + floor;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ApartmentLocation that = (ApartmentLocation) o;
+        return house == that.house &&
+                floor == that.floor &&
+                Objects.equals(city, that.city) &&
+                Objects.equals(street, that.street);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(city, street, house, floor);
     }
 }

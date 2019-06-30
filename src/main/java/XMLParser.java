@@ -5,7 +5,7 @@ import java.io.File;
 
 public class XMLParser {
 
-    public void parse(String filename) {
+    public static void parse(String filename) {
         try {
             File file = new File(filename);
             JAXBContext context = JAXBContext.newInstance(ApartmentLocation.class, Root.class);

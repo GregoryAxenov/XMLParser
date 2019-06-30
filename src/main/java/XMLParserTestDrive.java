@@ -1,8 +1,9 @@
 public class XMLParserTestDrive {
     public static void main(String[] args) {
-        XMLParser parser = new XMLParser();
         long startTime = System.currentTimeMillis();
-        parser.parse("/home/gregory/Documents/address.xml");
+        XMLParser.parse("/home/gregory/Downloads/address.xml");
+        ApartmentLocationHandler.showRepeats(Root.apartmentLocations);
+        ApartmentLocationHandler.showCitiesWithFloors(ApartmentLocationHandler.removeDuplicates(Root.apartmentLocations));
         long finishTime = System.currentTimeMillis();
         System.out.println(finishTime - startTime + " ms");
     }

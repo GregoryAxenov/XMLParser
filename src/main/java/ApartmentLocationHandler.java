@@ -32,7 +32,7 @@ public class ApartmentLocationHandler {
                         floor, citiesWithFloors.get(city).get(floor) + 1
                 );
             } else {
-                List<Integer> listWithFloors = new ArrayList<>(MAX_FLOOR);
+                List<Integer> listWithFloors = new ArrayList<>(MAX_FLOOR + 1);
                 for (int i = 0; i <= MAX_FLOOR; i++) {
                     listWithFloors.add(i, 0);
                 }
